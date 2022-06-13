@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.camunda.mapper.ZzUserMapper">
+
+    <select id="list" resultType="com.example.camunda.vo.ZzUserVO">
+        SELECT
+            u.user_id userId,
+            u.username,
+            u.psd,
+            r.role_id roleId,
+            r.role_name roleName,
+            d.department_id departmentId,
+            d.department_name departmentName
+        FROM
+            zz_user u,
+            zz_role r,
+            zz_department d
+        WHERE
+            u.department_id = d.department_id
+        AND u.role_id = r.role_id
+    </select>
+</mapper>
