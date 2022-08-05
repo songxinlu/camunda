@@ -26,7 +26,6 @@ public class BuyController {
     @Autowired
     BuyFacade buyFacade;
 
-
     @PostMapping(value = "/pay")
     public void pay(@RequestParam Double money) {
         ProcessInstance processInstance = buyFacade.pay(money);
