@@ -35,6 +35,6 @@ public class BuyController {
 
     @PostMapping(value = "/getProcessDiagramList")
     public List<GetProcessDiagramListDTO> getProcessDiagramList(@RequestBody GetProcessDiagramListVO getProcessDiagramListVO) {
-       return buyFacade.getProcessDiagramList(getProcessDiagramListVO);
+        return buyFacade.getProcessDiagramList(getProcessDiagramListVO);
     }
 }
